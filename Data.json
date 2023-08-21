@@ -1,0 +1,26 @@
+{
+  "users": [
+    [
+      [
+        {
+          "id": "f5935e3a-b905-4b81-a886-2898a73252d0",
+          "name": "Vijay Raj",
+          "age": 56,
+          "city": "Mumbai"
+        },
+        {
+          "id": "565547d7-4e11-4f14-b042-f4b30b9245ce",
+          "name": "Ryan Dahl",
+          "age": 42,
+          "city": "California"
+        }
+      ],
+      {
+        "id": "e1568039-75d8-49cd-8ce4-ae67db6dc41d",
+        "name": "Chota Bheem",
+        "age": 15,
+        "city": "DholakPur"
+      }
+    ]
+  ]
+}

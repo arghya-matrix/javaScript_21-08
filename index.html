@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            display: flex;
+            padding: 40px 80px 0 0;
+        }
+
+        form {
+            
+            display: flex;
+            text-align: center;
+        }
+        form input{
+            color: rgb(0, 0, 0);
+            margin: 14px;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Data</h1>
+<button id="getUuid"> getUuid </button>
+
+    <form action="/person" method="POST">
+        
+        <br>
+        <p>
+          Generated UUID: <span id="fetchUuid"></span> 
+           <br>
+           <br>
+        </p>
+        <input type="text" name="name" placeholder="name">
+        <input type="number" name="age" placeholder = "number">
+        <input type="text" name="city" placeholder="city name">
+        <input type="submit">
+    </form>
+   
+    
+    <a href="./update.html" target="_self">
+        <button>
+            Update
+        </button>  
+    </a>
+    
+    <script>
+        const uuidButton= document.getElementById("getUuid");
+        const fetchUuid= document.getElementById("fetchUuid");
+        uuidButton.addEventListener('click', () =>{
+            fetch('/getUuid')
+            .then(response => response.json())
+            .then(data => {
+                fetchUuid.textContent= data.uuid
+                
+            })
+            .catch(error => {
+                console.error("Error fetching uuid", error)
+            });
+        });
+    </script>
+</body>
+</html>

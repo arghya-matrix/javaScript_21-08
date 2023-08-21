@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated</title>
+</head>
+<body>
+    <form action="/update" method="POST">
+        <h1>Updated Data</h1>
+        <input type="text" name="name" placeholder="name">
+        <input type="number" name="age" placeholder = "number">
+        <input type="text" name="city" placeholder="city name">
+        <button>update</button>
+    </form>
+    <div id="container">
+
+    </div>
+    <script>
+        function fetchAndDisplayData() {
+        fetch('Data.json')
+        .then(res => res.json())
+        .then(Data => {
+            //const container= document.getElementById('container')
+            //container.innerHTML= JSON.stringify(Data, null, 2)
+            container.innerHTML= Data.map(item => `<li> ${item.type}: ${item.Data}.join('') </li>` );
+
+        })
+        .catch(error => {
+            console.error("Error fetching JSON data.", error)
+        });
+    }
+    fetchAndDisplayData();
+    </script>
+</body>
+</html>
